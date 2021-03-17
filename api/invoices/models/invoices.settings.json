@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "invoices",
   "info": {
-    "name": "invoices"
+    "name": "invoices",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,8 +11,35 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
-      "type": "string"
+    "payment_terms": {
+      "type": "enumeration",
+      "enum": [
+        "net_30_days",
+        "net_70_days"
+      ]
+    },
+    "bill_from": {
+      "type": "json"
+    },
+    "bill_to": {
+      "type": "json"
+    },
+    "invoice_date": {
+      "type": "date"
+    },
+    "project_description": {
+      "type": "richtext"
+    },
+    "item_list": {
+      "type": "json"
+    },
+    "invoice_status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "pending",
+        "paid"
+      ]
     }
   }
 }
